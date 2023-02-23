@@ -4,8 +4,8 @@
 /**
  * main - main function
  *
- * Description: prints the numbers 1 - 100 w/  FizzBuzz for multiples of both fizz and buzz
- *
+ * Description: prints the numbers 1 - 100 w/ 
+ * Fizzbuzz for mutiplying fizz and buzz
  * Return: always 0
  */
 int main(void)
