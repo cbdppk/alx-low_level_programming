@@ -4,7 +4,7 @@
 /**
  * main - main function
  *
- * Description: prints the numbers 1 - 100 w/ 
+ * Description: prints the numbers 1 - 100
  * Fizzbuzz for mutiplying fizz and buzz
  * Return: always 0
  */
