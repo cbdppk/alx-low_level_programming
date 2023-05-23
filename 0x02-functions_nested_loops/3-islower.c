@@ -4,6 +4,7 @@
 /**
  * _islower - for checking for lower cases
  *
+ * @c: for taking the arguement for func islower
  * Return: return 1 if true and 0 iffalse
  */
 
