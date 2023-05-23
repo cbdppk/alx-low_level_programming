@@ -1,6 +1,8 @@
 #include "main.h"
 #include <stdio.h>
 #include "1-alphabet.c"
+#include "_putchar.c"
+
 /**
  * main - check the code
  *
