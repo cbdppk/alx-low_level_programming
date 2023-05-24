@@ -1,6 +1,6 @@
 #include "main.h"
 #include <stdio.h>
-#include <stdlib.h>
+
 /**
  * print_last_digit - for printing the last digit
  * @a: only arguement
@@ -15,7 +15,7 @@ int print_last_digit(int a)
 	c = a % 10;
 	if (c < 0)
 	{
-		abs(c);
+		c = c * (-1);
 	}
 	_putchar(c + '0');
 	return (c);
