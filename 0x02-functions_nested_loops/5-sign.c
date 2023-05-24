@@ -4,6 +4,7 @@
  * print_sign - for printing thesign of numbers
  *
  * @n: arguement for the function
+ * Return: returns 0
  */
 
 int print_sign(int n)
