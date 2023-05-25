@@ -1,6 +1,6 @@
 #include "main.h"
 #include <ctype.h>
-
+#include <stdio.h>
 /**
  * _isupper - for checking for upper cases
  * @c: the arguement
@@ -14,7 +14,7 @@ int _isupper(int c)
 	{
 		return (1);
 	}
-	else 
+	else
 	{
 		return (0);
 	}
