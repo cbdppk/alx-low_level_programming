@@ -16,7 +16,7 @@ void more_numbers(void)
 
 	while (a <= 10)
 	{
-		b = 1;
+		b = 0;
 		while (b <= 14)
 		{
 			if (b >= 10)
