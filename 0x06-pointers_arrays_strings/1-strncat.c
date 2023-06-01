@@ -1,4 +1,6 @@
 #include "main.h"
+#include <string.h>
+#include <stdio.h>
 
 /**
  * char *_strncat(char *dest, char *src, int n) -
@@ -10,7 +12,5 @@
 
 char *_strncat(char *dest, char *src, int n)
 {
-	char *k;
-	k = strncat(dest, src, n+1);
-	return (k);
+	return ((strncat(dest, src, n)));
 }
