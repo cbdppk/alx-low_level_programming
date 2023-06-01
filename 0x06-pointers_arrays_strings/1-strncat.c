@@ -4,8 +4,8 @@
 
 /**
  * char *_strncat(char *dest, char *src, int n) -
- * @dest : first arguement 
- * @ src : second arguement 
+ * @dest : first arguement
+ * @ src : second arguement
  * @n : third arguement
  * Return: returns e the concatenated string
  */
