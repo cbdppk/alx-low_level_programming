@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <ctype.h>
 
 /**
  * main - for addind two command line arguements
@@ -11,15 +12,26 @@
 
 int main(int argc, char *argv[])
 {
-	if (argc < 3)
+	int count;
+	int results;
+
+	for (count = 1; count < argc; count++)
 	{
-		printf("Error\n");
-		return (1);
+		if(argc < 1)
+		{
+			printf("0\n");
+		}
+		else if(!isdigit(argv[count]))
+		{
+			printf("Error\n");
+			return (1);
+		}
+		else
+		{
+			results += atoi(argv[count]);
+		}
 	}
-	else
-	{
-		printf("%d\n", atoi(argv[1]) + atoi(argv[2]));
-	}
+	printf("%d\n", results);
 
 	return (0);
 }
