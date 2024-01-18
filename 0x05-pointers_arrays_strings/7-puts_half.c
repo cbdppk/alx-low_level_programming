@@ -32,6 +32,7 @@ void puts_half(char *str)
 	else if (a % 2 != 0)
 	{
 		n = (a - 1) / 2;
+		n++;
 		for (d = n; d <= a; d++)
 		{
 			printf("%c", str[d]);
