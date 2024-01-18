@@ -18,11 +18,11 @@ void rev_string(char *s)
 
 	len = strlen(s);
 	a = len - 1;
-	char c[a];
+	char *c;
 
 	for (n = a, p = 0; n >= 0 && p <= a; n--, p++)
 	{
-		c[p] = s[n];
+		c = s[n];
 
 	}
 	for (k = 0; k <= a; k++)
