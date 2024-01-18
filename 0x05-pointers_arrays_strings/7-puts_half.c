@@ -16,8 +16,11 @@ void puts_half(char *str)
 	int c;
 	int n;
 	int d;
+	int k;
 
 	a = strlen(str);
+	k = strlen(str);
+
 
 	if (a % 2 == 0)
 	{
@@ -29,15 +32,14 @@ void puts_half(char *str)
 		}
 		a++;
 	}
-	else if (a % 2 != 0)
+	else if (k % 2 != 0)
 	{
-		n = (a - 1) / 2;
-		n +=2;
-		for (d = n; d <= a; d++)
+		n = (k - 1) / 2;
+		for (d = n; d < k; d++)
 		{
 			printf("%c", str[d]);
 		}
-		a++;
+		k++;
 	}
 	printf("\n");
 }
