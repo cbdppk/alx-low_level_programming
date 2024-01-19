@@ -12,21 +12,15 @@ void rev_string(char *s)
 {
 	int len;
 	int n;
-	int a;
-	int p;
-	int k;
+	char c;
 
 	len = strlen(s);
-	a = len - 1;
-	char *c;
+	len--;
 
-	for (n = a, p = 0; n >= 0 && p <= a; n--, p++)
+	for (n = 0; n <= len; len--, n++)
 	{
 		c = s[n];
-
-	}
-	for (k = 0; k <= a; k++)
-	{
-		s[k] = c[k];
+		s[n] = s[len];
+		s[len] = c;
 	}
 }
