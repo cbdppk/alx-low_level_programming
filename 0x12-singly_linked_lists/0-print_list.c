@@ -6,6 +6,7 @@
  * Return: returns 0
  */
 
+
 size_t print_list(const list_t *h)
 {
 	int count;
@@ -14,7 +15,7 @@ size_t print_list(const list_t *h)
 	ptr = NULL;
 	count = 0;
 
-	if (head == NULL)
+	if (ptr == NULL)
 	{
 		printf("[0] (nil)\n");
 	}

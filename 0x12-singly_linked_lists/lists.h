@@ -6,6 +6,7 @@
 #include <unistd.h>
 #include <stdlib.h>
 #include "_putchar.c"
+#include "0-print_list.c"
 /**
  * struct list_s - singly linked list
  * @str: string - (malloc'ed string)
