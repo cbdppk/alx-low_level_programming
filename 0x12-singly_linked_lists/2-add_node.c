@@ -22,13 +22,10 @@ list_t *add_node(list_t **head, const char *str)
 	node->next = *head;
 	*head = node;
 
-	if (node->str == NULL)
+	if (node == NULL)
 	{
 		free(node);
 		return (NULL);
 	}
-	else
-	{
-		return (node);
-	}
+	return (node);
 }
