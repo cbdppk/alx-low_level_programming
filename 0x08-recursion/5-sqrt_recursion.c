@@ -5,7 +5,7 @@
 /**
  * _sqrt_recursion - for finding the square root of a number
  * @n : the number
- * Return: returns int 
+ * Return: returns int
  */
 
 int _sqrt_recursion(int n)
