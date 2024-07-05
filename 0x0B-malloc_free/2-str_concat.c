@@ -21,16 +21,27 @@ char *str_concat(char *s1, char *s2)
 
 	i = 0;
 	n = 0;
-	while (s1[i] != '\0')
-		i++;
-	while (s2[n] != '\0')
-		n++;
 
-	i++;
-	n++;
-	ptr = malloc(sizeof(char) * (i + n));
-	strcpy(ptr, s1);
-	strcat(ptr, s2);
+	if (s1 != NULL)
+	{
+		while (s1[i] != '\0')
+			i++;
+	}
+	if (s2 != NULL)
+	{
+		while (s2[n] != '\0')
+			n++;
+	}
+	ptr = malloc(sizeof(char) * (i + n + 1));
+	if (ptr == NULL)
+		return (NULL);
+
+	if (s1 != NULL)
+		strcpy(ptr, s1);
+	else
+		ptr[0] = '\0';
+	if (s2 != NULL)
+		strcat(ptr, s2);
 
 	return (ptr);
 }
