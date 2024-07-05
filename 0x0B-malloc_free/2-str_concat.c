@@ -26,9 +26,10 @@ char *str_concat(char *s1, char *s2)
 	while (s2[n] != '\0')
 		n++;
 
-
+	i++;
+	n++;
 	ptr = malloc(sizeof(char) * (i + n));
-	ptr = strdup(s1);
+	strcpy(ptr, s1);
 	strcat(ptr, s2);
 
 	return (ptr);
