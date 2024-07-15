@@ -18,14 +18,14 @@ int main(int argc, char *argv[])
 	if (argc != 4)
 	{
 		printf("Error\n");
-		return (1);
+		exit(98);
 	}
 
 	op_func = get_op_func(argv[2]);
 	if (op_func == NULL)
 	{
 		printf("Error\n");
-		return (1);
+		exit(99);
 	}
 
 	result = 0;
