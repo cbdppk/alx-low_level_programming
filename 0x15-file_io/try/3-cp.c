@@ -12,7 +12,8 @@ void copy_to(char *file_from, char *file_to)
 {
 	int fd1;
 	int fd2;
-	ssize_t bytes_read, bytes_written, total_written;
+	ssize_t bytes_read;
+	ssize_t bytes_written;
 	char buffer[1024];
 
 	fd1 = open(file_from, O_RDONLY);
@@ -32,19 +33,13 @@ void copy_to(char *file_from, char *file_to)
 
 	while ((bytes_read = read(fd1, buffer, 1024)) > 0)
 	{
-		total_written = 0;
 		bytes_written = write(fd2, buffer, bytes_read);
-		while (total_written < bytes_read)
+		if (bytes_written == -1)
 		{
-			bytes_written = write(fd2, buffer + total_written, bytes_read - total_written);
-			if (bytes_written == -1)
-			{
-				dprintf(STDERR_FILENO, "Error: Can't write to %s\n", file_to);
-				close(fd2);
-				close(fd1);
-				exit(99);
-			}
-			total_written += bytes_written;
+			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", file_to);
+			close(fd2);
+			close(fd1);
+			exit(99);
 		}
 
 	}
