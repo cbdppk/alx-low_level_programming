@@ -57,7 +57,7 @@ int copy_to(char *file_from, char *file_to)
 	{
 		free(buffer);
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", file_from);
-		close(fd2)
+		close(fd2);
 		close(fd1);
 		exit(98);
 	}
