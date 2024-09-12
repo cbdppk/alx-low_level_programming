@@ -8,7 +8,7 @@
  * Return: returns 0
  */
 
-int copy_to(char *file_from, char *file_to)
+void copy_to(char *file_from, char *file_to)
 {
 	int fd1;
 	int fd2;
@@ -76,7 +76,7 @@ int copy_to(char *file_from, char *file_to)
 	}
 
 	free(buffer);
-	return (0);
+	exit(0);
 }
 
 /**
