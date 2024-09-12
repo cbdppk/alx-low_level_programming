@@ -14,16 +14,12 @@ void copy_to(char *file_from, char *file_to)
 	int fd2;
 	ssize_t bytes_read;
 	ssize_t bytes_written;
-	char *buffer;
+	char buffer[1024];
 
-	buffer = malloc(sizeof(char) * 1024);
-	if (buffer == NULL)
-		exit(99);
 	fd1 = open(file_from, O_RDONLY);
 	if (fd1 == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", file_from);
-		free(buffer);
 		exit(98);
 	}
 
@@ -32,7 +28,6 @@ void copy_to(char *file_from, char *file_to)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", file_to);
 		close(fd1);
-		free(buffer);
 		exit(99);
 	}
 
@@ -41,7 +36,6 @@ void copy_to(char *file_from, char *file_to)
 		bytes_written = write(fd2, buffer, bytes_read);
 		if (bytes_written == -1)
 		{
-			free(buffer);
 			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", file_to);
 			close(fd2);
 			close(fd1);
@@ -52,7 +46,6 @@ void copy_to(char *file_from, char *file_to)
 
 	if (bytes_read == -1)
 	{
-		free(buffer);
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", file_from);
 		close(fd2);
 		close(fd1);
@@ -62,18 +55,13 @@ void copy_to(char *file_from, char *file_to)
 	if (close(fd2) == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't close fd %d", fd2);
-		free(buffer);
 		exit(100);
 	}
 	if (close(fd1) == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't close fd %d", fd1);
-		free(buffer);
 		exit(100);
 	}
-
-	free(buffer);
-	exit(0);
 }
 
 /**
