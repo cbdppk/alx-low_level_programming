@@ -73,7 +73,7 @@ int copy_to(char *file_from, char *file_to)
 	}
 
 	free(buffer);
-	return (0);
+	return (1);
 }
 
 /**
