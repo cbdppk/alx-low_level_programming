@@ -15,7 +15,6 @@ void copy_to(char *file_from, char *file_to)
 	ssize_t bytes_read;
 	ssize_t bytes_written;
 	char *buffer;
-	mode_t file_perm;
 
 	buffer = malloc(sizeof(char) * 1024);
 	if (buffer == NULL)
@@ -28,8 +27,7 @@ void copy_to(char *file_from, char *file_to)
 		exit(98);
 	}
 
-	file_perm = S_IRUSR | S_IWUSR | S_IWGRP | S_IROTH;
-	fd2 = open(file_to, O_RDWR | O_CREAT | O_TRUNC, file_perm);
+	fd2 = open(file_to, O_RDWR | O_CREAT | O_TRUNC, 0664);
 	if (fd2 == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", file_to);
