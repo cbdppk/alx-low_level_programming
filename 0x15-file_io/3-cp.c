@@ -31,7 +31,10 @@ int copy_to(char *file_from, char *file_to)
 	if (fd2 == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", file_to);
-		close(fd1);
+		if (close(fd1) == -1)
+		{
+			dprintf(STDERR_FILENO, "Error: Can't close fd %d", fd1);
+		}
 		free(buffer);
 		exit(99);
 	}
@@ -54,7 +57,7 @@ int copy_to(char *file_from, char *file_to)
 	{
 		free(buffer);
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", file_from);
-		close(fd2);
+		close(fd2)
 		close(fd1);
 		exit(98);
 	}
@@ -73,7 +76,7 @@ int copy_to(char *file_from, char *file_to)
 	}
 
 	free(buffer);
-	return (1);
+	return (0);
 }
 
 /**
