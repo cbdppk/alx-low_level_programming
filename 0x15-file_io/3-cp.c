@@ -15,12 +15,26 @@ void copy_to(char *file_from, char *file_to)
 	ssize_t bytes_read;
 	ssize_t bytes_written;
 	char buffer[1024];
+	struct stat st;
 
 	fd1 = open(file_from, O_RDONLY);
 	if (fd1 == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", file_from);
 		exit(98);
+	}
+
+	if (access(file_to, W_OK) == -1)
+	{
+		if (stat(file_to, &st) == 0)
+		{
+			if (chmod(file_to, 0664) == -1)
+			{
+				dprintf(STDERR_FILENO, "Error: Can't modify permissions for file %s\n", file_to);
+				close(fd1);
+				exit(99);
+			}
+		}
 	}
 
 	fd2 = open(file_to, O_RDWR | O_CREAT | O_TRUNC, 0664);
