@@ -5,7 +5,7 @@
  * copy_to - for copying data from file_from to file_to
  * @file_from: the file containing the data to be copied
  * @file_to: the file to recieve the data
- * Return: returns 0
+ * Return: returns void
  */
 
 void copy_to(char *file_from, char *file_to)
